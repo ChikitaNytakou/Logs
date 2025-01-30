@@ -1,0 +1,160 @@
+[2025-01-30 22:14:31] Adding 1 jobs, 1 triggers.
+[2025-01-30 22:14:31] Adding job: DEFAULT.LogWriterJob
+[2025-01-30 22:14:31] Scheduling job: DEFAULT.LogWriterJob with trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:14:31] Rescheduling job: DEFAULT.LogWriterJob with updated trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:15:03] Adding 1 jobs, 1 triggers.
+[2025-01-30 22:15:03] Adding job: DEFAULT.LogWriterJob
+[2025-01-30 22:15:03] Scheduling job: DEFAULT.LogWriterJob with trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:15:03] Rescheduling job: DEFAULT.LogWriterJob with updated trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:15:24] Adding 1 jobs, 1 triggers.
+[2025-01-30 22:15:24] Adding job: DEFAULT.LogWriterJob
+[2025-01-30 22:15:24] Scheduling job: DEFAULT.LogWriterJob with trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:15:24] Rescheduling job: DEFAULT.LogWriterJob with updated trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:16:50] Adding 1 jobs, 1 triggers.
+[2025-01-30 22:16:50] Adding job: DEFAULT.LogWriterJob
+[2025-01-30 22:16:50] Scheduling job: DEFAULT.LogWriterJob with trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:16:50] Rescheduling job: DEFAULT.LogWriterJob with updated trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:17:58] Adding 1 jobs, 1 triggers.
+[2025-01-30 22:17:58] Adding job: DEFAULT.LogWriterJob
+[2025-01-30 22:17:58] Scheduling job: DEFAULT.LogWriterJob with trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:17:58] Rescheduling job: DEFAULT.LogWriterJob with updated trigger: DEFAULT.LogWriterTrigger
+[2025-01-30 22:25:02] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:25:02] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:25:02] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:25:02] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:25:02] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:25:02] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:25:02] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:26:04] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:26:04] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:26:04] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:26:04] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:26:05] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:26:05] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:26:05] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:30:24] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:30:24] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:30:24] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:30:24] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:30:24] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:30:24] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:30:24] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:33:42] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:33:42] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:33:42] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:33:42] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:33:42] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:33:42] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:33:42] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:36:23] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:36:23] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:36:23] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:36:23] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:36:23] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:36:23] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:36:23] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:39:02] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:39:02] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:39:02] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:39:02] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:39:02] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:39:02] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:39:02] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:39:02] [EmailService] ERROR: User 'user3' modified settings | Session: b8317a5e | IP: 192.168.54.134 | Device: Mobile | Browser: Edge | Response Time: 990ms
+[2025-01-30 22:39:02] [UserService] INFO: User 'admin' logged out | Session: f36a0a39 | IP: 192.168.120.107 | Device: Mobile | Browser: Safari | Response Time: 357ms
+[2025-01-30 22:39:17] [AuthService] WARNING: User 'user3' logged out | Session: 69b868de | IP: 192.168.137.191 | Device: Desktop | Browser: Chrome | Response Time: 694ms
+[2025-01-30 22:39:17] [DatabaseService] WARNING: User 'user2' modified settings | Session: 9f052eb7 | IP: 192.168.222.155 | Device: Tablet | Browser: Chrome | Response Time: 525ms
+[2025-01-30 22:39:46] [DatabaseService] WARNING: User 'user2' logged out | Session: 9a787e71 | IP: 192.168.110.165 | Device: Tablet | Browser: Safari | Response Time: 44ms
+[2025-01-30 22:39:46] [FileService] WARNING: User 'user1' updated profile | Session: 7b6d2842 | IP: 192.168.185.37 | Device: Mobile | Browser: Firefox | Response Time: 410ms
+[2025-01-30 22:40:16] [FileService] SUCCESS: User 'user3' created record | Session: 093d3c3c | IP: 192.168.130.13 | Device: Desktop | Browser: Safari | Response Time: 346ms
+[2025-01-30 22:40:16] [EmailService] INFO: User 'user1' viewed page | Session: 89a1ca11 | IP: 192.168.94.81 | Device: Tablet | Browser: Chrome | Response Time: 962ms
+[2025-01-30 22:40:16] [FileService] INFO: User 'guest' viewed page | Session: c535d37b | IP: 192.168.172.209 | Device: Mobile | Browser: Firefox | Response Time: 468ms
+[2025-01-30 22:44:21] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:44:21] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:44:21] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:44:21] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:44:21] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:44:21] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:44:21] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:44:21] [EmailService] INFO: User 'user1' created record | Session: 9b037c7f | IP: 192.168.199.57 | Device: Mobile | Browser: Chrome | Response Time: 439ms
+[2025-01-30 22:44:21] [EmailService] ERROR: User 'user3' logged out | Session: 3896aebb | IP: 192.168.165.241 | Device: Desktop | Browser: Chrome | Response Time: 145ms
+[2025-01-30 22:44:21] [AuthService] WARNING: User 'user2' logged in | Session: b44948ff | IP: 192.168.115.23 | Device: Tablet | Browser: Edge | Response Time: 959ms
+[2025-01-30 22:44:35] [EmailService] INFO: User 'user3' created record | Session: 87a13705 | IP: 192.168.19.43 | Device: Desktop | Browser: Firefox | Response Time: 668ms
+[2025-01-30 22:44:35] [AuthService] WARNING: User 'guest' deleted item | Session: 45c72180 | IP: 192.168.186.81 | Device: Desktop | Browser: Edge | Response Time: 262ms
+[2025-01-30 22:44:50] [UserService] ERROR: User 'admin' logged out | Session: 3a418d07 | IP: 192.168.237.159 | Device: Desktop | Browser: Firefox | Response Time: 682ms
+[2025-01-30 22:44:50] [AuthService] ERROR: User 'user3' modified settings | Session: 2ad975dd | IP: 192.168.96.79 | Device: Tablet | Browser: Safari | Response Time: 189ms
+[2025-01-30 22:45:05] [DatabaseService] INFO: User 'guest' deleted item | Session: 7d28dd69 | IP: 192.168.36.147 | Device: Mobile | Browser: Safari | Response Time: 699ms
+[2025-01-30 22:45:05] [FileService] INFO: User 'user2' created record | Session: 17f6a63b | IP: 192.168.97.159 | Device: Desktop | Browser: Firefox | Response Time: 650ms
+[2025-01-30 22:45:05] [EmailService] WARNING: User 'guest' logged out | Session: 6a898760 | IP: 192.168.103.249 | Device: Tablet | Browser: Firefox | Response Time: 835ms
+[2025-01-30 22:51:21] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:51:21] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:51:21] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:51:21] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:51:21] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:51:21] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:51:21] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:51:21] [UserService] SUCCESS: User 'user3' updated profile | Session: 08d2800e | IP: 192.168.44.231 | Device: Tablet | Browser: Chrome | Response Time: 309ms
+[2025-01-30 22:51:52] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:51:52] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:51:52] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:51:52] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:51:52] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:51:52] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:51:52] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:51:52] [FileService] SUCCESS: User 'guest' created record | Session: 7eef8a76 | IP: 192.168.121.117 | Device: Mobile | Browser: Firefox | Response Time: 698ms
+[2025-01-30 22:51:52] [EmailService] ERROR: User 'guest' deleted item | Session: ef7fe778 | IP: 192.168.159.70 | Device: Tablet | Browser: Chrome | Response Time: 792ms
+[2025-01-30 22:51:52] [DatabaseService] ERROR: User 'guest' viewed page | Session: 853fc204 | IP: 192.168.110.235 | Device: Mobile | Browser: Edge | Response Time: 567ms
+[2025-01-30 22:54:34] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:54:34] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:54:34] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:54:34] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:54:34] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:54:34] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:54:34] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:54:34] [AuthService] INFO: User 'user2' viewed page | Session: 1085967d | IP: 192.168.105.38 | Device: Mobile | Browser: Safari | Response Time: 159ms
+[2025-01-30 22:54:50] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:54:50] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:54:50] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:54:50] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:54:50] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:54:50] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:54:50] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:54:50] [UserService] ERROR: User 'user3' created record | Session: 08e53bb6 | IP: 192.168.91.70 | Device: Desktop | Browser: Safari | Response Time: 119ms
+[2025-01-30 22:55:27] Adding 2 jobs, 2 triggers.
+[2025-01-30 22:55:27] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 22:55:27] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:55:27] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 22:55:27] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:55:27] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 22:55:27] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 22:55:27] [FileService] ERROR: User 'user1' modified settings | Session: fe2d5eb3 | IP: 192.168.140.175 | Device: Mobile | Browser: Safari | Response Time: 448ms
+[2025-01-30 22:55:27] [DatabaseService] SUCCESS: User 'user1' deleted item | Session: 9018093f | IP: 192.168.21.179 | Device: Tablet | Browser: Firefox | Response Time: 196ms
+[2025-01-30 22:55:27] [AuthService] ERROR: User 'guest' logged in | Session: 56e7ceee | IP: 192.168.55.173 | Device: Desktop | Browser: Chrome | Response Time: 576ms
+[2025-01-30 23:00:04] Adding 2 jobs, 2 triggers.
+[2025-01-30 23:00:04] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 23:00:04] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 23:00:04] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 23:00:04] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 23:00:04] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 23:00:04] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 23:00:04] [UserService] ERROR: User 'user3' modified settings | Session: a7556051 | IP: 192.168.221.24 | Device: Mobile | Browser: Edge | Response Time: 56ms
+[2025-01-30 23:00:18] [EmailService] INFO: User 'user2' created record | Session: 840cf2ca | IP: 192.168.42.136 | Device: Desktop | Browser: Safari | Response Time: 139ms
+[2025-01-30 23:00:18] [EmailService] ERROR: User 'guest' viewed page | Session: 4cb6945b | IP: 192.168.228.92 | Device: Tablet | Browser: Chrome | Response Time: 957ms
+[2025-01-30 23:00:18] [DatabaseService] INFO: User 'user1' viewed page | Session: c708182c | IP: 192.168.82.30 | Device: Mobile | Browser: Chrome | Response Time: 207ms
+[2025-01-30 23:00:44] Adding 2 jobs, 2 triggers.
+[2025-01-30 23:00:44] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-01-30 23:00:44] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 23:00:44] Adding job: DEFAULT.FileRotationJob
+[2025-01-30 23:00:44] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 23:00:44] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-01-30 23:00:44] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-01-30 23:00:44] [FileService] SUCCESS: User 'user3' logged out | Session: 7863a29f | IP: 192.168.169.200 | Device: Mobile | Browser: Firefox | Response Time: 392ms
+[2025-01-30 23:00:44] [AuthService] WARNING: User 'user1' modified settings | Session: cd02ca57 | IP: 192.168.157.68 | Device: Desktop | Browser: Chrome | Response Time: 24ms
+[2025-01-30 23:00:44] [DatabaseService] SUCCESS: User 'user2' modified settings | Session: 893e4ff8 | IP: 192.168.71.223 | Device: Mobile | Browser: Edge | Response Time: 813ms
+[2025-01-30 23:00:58] [UserService] INFO: User 'user3' updated profile | Session: ef30246e | IP: 192.168.154.195 | Device: Desktop | Browser: Firefox | Response Time: 663ms
+[2025-01-30 23:01:13] [FileService] ERROR: User 'user2' modified settings | Session: 77c1582c | IP: 192.168.144.4 | Device: Mobile | Browser: Chrome | Response Time: 61ms
+[2025-01-30 23:01:13] [AuthService] WARNING: User 'user2' created record | Session: 7b46811d | IP: 192.168.220.114 | Device: Mobile | Browser: Firefox | Response Time: 584ms
+[2025-01-30 23:01:13] [EmailService] SUCCESS: User 'admin' logged out | Session: 05f4fda1 | IP: 192.168.194.147 | Device: Desktop | Browser: Firefox | Response Time: 681ms
+[2025-01-30 23:01:28] [UserService] WARNING: User 'user1' viewed page | Session: 03d755e0 | IP: 192.168.60.3 | Device: Desktop | Browser: Firefox | Response Time: 467ms
+[2025-01-30 23:01:28] [AuthService] ERROR: User 'guest' logged in | Session: 8cba3f97 | IP: 192.168.237.138 | Device: Tablet | Browser: Firefox | Response Time: 323ms
+[2025-01-30 23:01:28] [DatabaseService] SUCCESS: User 'admin' created record | Session: bfa62403 | IP: 192.168.199.96 | Device: Mobile | Browser: Edge | Response Time: 889ms
