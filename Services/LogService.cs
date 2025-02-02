@@ -1,64 +1,83 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Microsoft.Extensions.Logging;
 
 namespace Logs.Services
 {
     public interface ILogService
     {
-        void WriteLog(string message);
-        IEnumerable<string> ReadLogs(DateTime date);
+        string ReadLogs(DateTime date);
+        List<string> GetLogFolders();
     }
 
     public class LogService : ILogService
     {
         private readonly ILogger<LogService> _logger;
+        private readonly string _logBasePath;
 
-        public LogService(ILogger<LogService> logger)
+        public LogService(ILogger<LogService> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _logBasePath = Path.Combine(Directory.GetCurrentDirectory(), "Archive", "Logs");
         }
 
-        public void WriteLog(string message)
+        public List<string> GetLogFolders()
         {
-            _logger.LogInformation(message);
-        }
-
-        public IEnumerable<string> ReadLogs(DateTime date)
-        {
-            string monthFolder = date.ToString("yyyy-MM-dd");
-            string logPath = Path.Combine(
-                Directory.GetCurrentDirectory(),
-                "Archive",
-                "Logs",
-                monthFolder);
-
-            if (!Directory.Exists(logPath))
+            try
             {
-                return Enumerable.Empty<string>();
+                if (!Directory.Exists(_logBasePath))
+                {
+                    return new List<string>();
+                }
+
+                return Directory.GetDirectories(_logBasePath)
+                    .Select(path => Path.GetFileName(path))
+                    .Where(folder => DateTime.TryParse(folder, out _))
+                    .OrderByDescending(folder => folder)
+                    .ToList();
             }
-
-            // Находим единственный файл логов
-            var logFile = Directory.GetFiles(logPath, "log_*.log").FirstOrDefault();
-            if (logFile == null)
+            catch (Exception ex)
             {
-                return Enumerable.Empty<string>();
+                _logger.LogError(ex, "Error getting log folders");
+                return new List<string>();
+            }
+        }
+
+        public string ReadLogs(DateTime date)
+        {
+            string folderPath = Path.Combine(_logBasePath, date.ToString("yyyy-MM-dd"));
+
+            if (!Directory.Exists(folderPath))
+            {
+                return string.Empty;
             }
 
             try
             {
-                using (FileStream fs = new FileStream(logFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (StreamReader reader = new StreamReader(fs))
+                var stringBuilder = new StringBuilder();
+                var logFiles = Directory.GetFiles(folderPath, "*.log")
+                    .OrderBy(f => f)
+                    .ToList();
+
+                foreach (var logFile in logFiles)
                 {
-                    return reader.ReadToEnd()
-                        .Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
-                        .ToList();
+                    using (var fs = new FileStream(logFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var reader = new StreamReader(fs))
+                    {
+                        stringBuilder.AppendLine($"=== {Path.GetFileName(logFile)} ===");
+                        stringBuilder.AppendLine(reader.ReadToEnd());
+                        stringBuilder.AppendLine();
+                    }
                 }
+
+                return stringBuilder.ToString();
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error reading log file: {logFile}");
-                return Enumerable.Empty<string>();
+                _logger.LogError(ex, $"Error reading logs for date: {date:yyyy-MM-dd}");
+                return string.Empty;
             }
         }
     }

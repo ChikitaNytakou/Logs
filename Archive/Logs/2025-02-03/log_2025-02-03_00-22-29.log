@@ -1,0 +1,9 @@
+[2025-02-03 00:22:28] Adding 2 jobs, 2 triggers.
+[2025-02-03 00:22:28] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-02-03 00:22:28] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-02-03 00:22:28] Adding job: DEFAULT.FileRotationJob
+[2025-02-03 00:22:28] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-02-03 00:22:28] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-02-03 00:22:28] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-02-03 00:22:29] [AuthService] ERROR: User 'user3' logged in | Session: 8e2e231d | IP: 192.168.154.204 | Device: Mobile | Browser: Edge | Response Time: 771ms
+[2025-02-03 00:22:42] [UserService] ERROR: User 'user1' logged in | Session: 196ae175 | IP: 192.168.213.128 | Device: Desktop | Browser: Chrome | Response Time: 80ms

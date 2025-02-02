@@ -1,150 +1,75 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Просмотр логов";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Просмотр логов</h1>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Выберите дату</h5>
-                        <input hidden type="text" id="logDate" name="logDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <button class="btn btn-primary" id="toggleAutoUpdate">
-                        Остановить автообновление
-                    </button>
-                </div>
-                <div class="mt-2">
-                    <span class="text-muted" id="lastUpdateTime"></span>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <textarea id="logArea" class="form-control" rows="20" readonly></textarea>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="calendar"></div>
+        </div>
+        <div class="col-md-8">
+            <h2>@ViewData["Title"]</h2>
+            <textarea id="logContent" class="form-control" style="width: 100%; height: 600px;" readonly></textarea>
         </div>
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      flatpickr("#logDate", {
-        inline: true,  // Убирает необходимость открывать календарь по нажатию
-        dateFormat: "Y-m-d"  // Формат даты (по вашему выбору)
-      });
-    });
-</script>
-
-<script>
-    let autoUpdateEnabled = true;
-    let lastContent = '';
-    let updateTimer = null;
-    let currentDate = new Date().toISOString().split('T')[0];
-
-    // Функция для форматирования времени
-    function formatTime(date) {
-        return date.toLocaleTimeString('ru-RU', {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
-    }
-
-    // Функция обновления логов
-    async function loadLogs(date = null) {
-        try {
-            const url = date
-                ? `/Home/GetLogsByDate?date=${date}`
-                : '/Home/GetLogs';
-
-            const response = await fetch(url);
-            const data = await response.json();
-
-            if (data.success) {
-                const logArea = document.getElementById('logArea');
-                const newContent = data.data.join('\n');
-
-                // Обновляем только если содержимое изменилось
-                if (newContent !== lastContent) {
-                    logArea.value = newContent;
-                    lastContent = newContent;
-
-                    // Прокручиваем к последней записи если это текущая дата
-                    if (!date || date === new Date().toISOString().split('T')[0]) {
-                        logArea.scrollTop = logArea.scrollHeight;
-                    }
+@section Scripts {
+    <script>
+        const availableDates = @Json.Serialize(Model);
+        
+        const calendar = flatpickr("#calendar", {
+            inline: true,
+            dateFormat: "Y-m-d",
+            locale: "ru",
+            defaultDate: "today",
+            enable: availableDates,
+            weekNumbers: true,
+            firstDayOfWeek: 1,
+            onChange: function(selectedDates) {
+                if (selectedDates.length > 0) {
+                    const selectedDate = selectedDates[0];
+                    openFolder(formatDate(selectedDate));
                 }
-
-                // Обновляем время последнего обновления
-                const now = new Date();
-                document.getElementById('lastUpdateTime').textContent =
-                    `Последнее обновление: ${formatTime(now)}`;
-            } else {
-                console.error('Ошибка:', data.error);
             }
-        } catch (error) {
-            console.error('Ошибка загрузки логов:', error);
-        }
-    }
+        });
 
-    // Функция для управления автообновлением
-    function toggleAutoUpdate() {
-        const button = document.getElementById('toggleAutoUpdate');
-        autoUpdateEnabled = !autoUpdateEnabled;
-
-        if (autoUpdateEnabled) {
-            button.textContent = 'Остановить автообновление';
-            button.classList.remove('btn-success');
-            button.classList.add('btn-primary');
-            startAutoUpdate();
-        } else {
-            button.textContent = 'Включить автообновление';
-            button.classList.remove('btn-primary');
-            button.classList.add('btn-success');
-            stopAutoUpdate();
-        }
-    }
-
-    // Функция запуска автообновления
-    function startAutoUpdate() {
-        if (updateTimer === null && currentDate === new Date().toISOString().split('T')[0]) {
-            loadLogs(); // Загружаем сразу
-            updateTimer = setInterval(() => loadLogs(), 15000); // Обновляем каждые 15 секунд
-        }
-    }
-
-    // Функция остановки автообновления
-    function stopAutoUpdate() {
-        if (updateTimer !== null) {
-            clearInterval(updateTimer);
-            updateTimer = null;
-        }
-    }
-
-    // Обработчик изменения даты
-    document.getElementById('logDate').addEventListener('change', function(e) {
-        const selectedDate = e.target.value;
-        currentDate = selectedDate;
-
-        // Останавливаем автообновление если выбрана не текущая дата
-        if (selectedDate !== new Date().toISOString().split('T')[0]) {
-            stopAutoUpdate();
-            const button = document.getElementById('toggleAutoUpdate');
-            button.textContent = 'Включить автообновление';
-            button.classList.remove('btn-primary');
-            button.classList.add('btn-success');
-            autoUpdateEnabled = false;
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
         }
 
-        loadLogs(selectedDate);
-    });
+        function openFolder(folderName) {
+            const logContent = $('#logContent');
+            logContent.val('Загрузка...');
 
-    // Привязываем обработчик к кнопке
-    document.getElementById('toggleAutoUpdate').addEventListener('click', toggleAutoUpdate);
+            $.ajax({
+                url: '@Url.Action("OpenLogFolder")',
+                type: 'GET',
+                data: { folderName: folderName },
+                success: function(data) {
+                    logContent.val(data || 'Нет данных для выбранной даты');
+                },
+                error: function() {
+                    logContent.val('Ошибка при открытии папки.');
+                    alert('Ошибка при открытии папки.');
+                }
+            });
+        }
 
-    // Запускаем автообновление при загрузке страницы
-    startAutoUpdate();
-</script>
+        // Загрузка логов при инициализации страницы
+        $(document).ready(function() {
+            if (availableDates.length > 0) {
+                const today = formatDate(new Date());
+                if (availableDates.includes(today)) {
+                    openFolder(today);
+                } else {
+                    openFolder(availableDates[0]);
+                }
+            }
+        });
+    </script>
+}
