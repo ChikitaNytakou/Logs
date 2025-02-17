@@ -28,3 +28,11 @@
 [2025-02-17 23:09:14] [DatabaseService] ERROR: User 'guest' logged in | Session: 41eed73a | IP: 192.168.192.247 | Device: Mobile | Browser: Firefox | Response Time: 164ms
 [2025-02-17 23:09:14] [AuthService] INFO: User 'user1' updated profile | Session: 16a9a89a | IP: 192.168.231.9 | Device: Tablet | Browser: Firefox | Response Time: 749ms
 [2025-02-17 23:09:14] [AuthService] INFO: User 'guest' modified settings | Session: 09755aa4 | IP: 192.168.92.167 | Device: Tablet | Browser: Edge | Response Time: 202ms
+[2025-02-17 23:11:20] Adding 2 jobs, 2 triggers.
+[2025-02-17 23:11:20] Adding job: DEFAULT.FrequentLogWriterJob
+[2025-02-17 23:11:20] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-02-17 23:11:20] Adding job: DEFAULT.FileRotationJob
+[2025-02-17 23:11:20] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
+[2025-02-17 23:11:20] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
+[2025-02-17 23:11:20] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
+[2025-02-17 23:11:21] [DatabaseService] ERROR: User 'guest' created record | Session: 7af26786 | IP: 192.168.131.40 | Device: Desktop | Browser: Chrome | Response Time: 934ms
