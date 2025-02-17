@@ -14,12 +14,13 @@ get_version:
   artifacts:
     expire_in: 1 hour
     paths:
-      - VERSION
+      - Logs.csproj  # Сохраняем Logs.csproj для последующих шагов
 
 # Увеличение major версии
 increase_major:
   stage: versioning
   script:
+    - IFS='.' read -r major minor patch <<< "$VERSION"  # Загружаем текущее значение версии
     - new_major=$((major + 1))
     - new_version="$new_major.0.0"
     - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
@@ -32,6 +33,7 @@ increase_major:
 increase_minor:
   stage: versioning
   script:
+    - IFS='.' read -r major minor patch <<< "$VERSION"  # Загружаем текущее значение версии
     - new_minor=$((minor + 1))
     - new_version="$major.$new_minor.0"
     - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
@@ -44,6 +46,7 @@ increase_minor:
 increase_patch:
   stage: versioning
   script:
+    - IFS='.' read -r major minor patch <<< "$VERSION"  # Загружаем текущее значение версии
     - new_patch=$((patch + 1))
     - new_version="$major.$minor.$new_patch"
     - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
