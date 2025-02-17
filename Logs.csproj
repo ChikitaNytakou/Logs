@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+	<Version>0.8.1</Version>
+	<AssemblyInformationalVersion>0.8.1</AssemblyInformationalVersion>
+	<Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 

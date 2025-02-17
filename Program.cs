@@ -3,6 +3,7 @@ using Serilog;
 using Logs.Services;
 using Serilog.Events;
 using Serilog.Sinks.File;
+using Logs.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,6 +88,13 @@ builder.Services.AddQuartz(q =>
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 var app = builder.Build();
+
+// Middleware для установки версии в HttpContext
+app.Use(async (context, next) =>
+{
+    context.Items["VersionInfo"] = VersionInfo.Version; // Сохраните версию
+    await next.Invoke();
+});
 
 if (!app.Environment.IsDevelopment())
 {

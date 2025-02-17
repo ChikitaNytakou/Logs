@@ -1,0 +1,58 @@
+﻿stages:
+  - versioning
+  - build
+
+variables:
+  VERSION: "0.8.1"  # начальная версия
+
+# Получаем текущую версию из тегов
+get_version:
+  stage: versioning
+  script:
+    - export VERSION=$(git describe --tags --abbrev=0 || echo "0.8.1")  # Установите значение по умолчанию
+    - IFS='.' read -r major minor patch <<< "$VERSION"
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - VERSION
+
+# Увеличение major версии
+increase_major:
+  stage: versioning
+  script:
+    - new_major=$((major + 1))
+    - new_version="$new_major.0.0"
+    - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
+    - git commit -am "Release version $new_version" || echo "No changes to commit"
+    - git tag "v$new_version"
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /major/'  # Увеличиваем major, если есть "major"
+
+# Увеличение minor версии
+increase_minor:
+  stage: versioning
+  script:
+    - new_minor=$((minor + 1))
+    - new_version="$major.$new_minor.0"
+    - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
+    - git commit -am "Release version $new_version" || echo "No changes to commit"
+    - git tag "v$new_version"
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /minor/'  # Увеличиваем minor, если есть "minor"
+
+# Увеличение patch версии
+increase_patch:
+  stage: versioning
+  script:
+    - new_patch=$((patch + 1))
+    - new_version="$major.$minor.$new_patch"
+    - sed -i "s/<Version>.*<\/Version>/<Version>$new_version<\/Version>/" Logs.csproj
+    - git commit -am "Release version $new_version" || echo "No changes to commit"
+    - git tag "v$new_version"
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /patch/'  # Увеличиваем patch, если есть "patch"
+
+build:
+  stage: build
+  script:
+    - dotnet build Logs.csproj
