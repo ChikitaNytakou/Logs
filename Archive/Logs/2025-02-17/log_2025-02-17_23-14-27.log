@@ -1,8 +1,0 @@
-[2025-02-17 23:14:26] Adding 2 jobs, 2 triggers.
-[2025-02-17 23:14:26] Adding job: DEFAULT.FrequentLogWriterJob
-[2025-02-17 23:14:26] Scheduling job: DEFAULT.FrequentLogWriterJob with trigger: DEFAULT.FrequentLogWriterTrigger
-[2025-02-17 23:14:26] Adding job: DEFAULT.FileRotationJob
-[2025-02-17 23:14:26] Scheduling job: DEFAULT.FileRotationJob with trigger: DEFAULT.FileRotationTrigger
-[2025-02-17 23:14:26] Rescheduling job: DEFAULT.FrequentLogWriterJob with updated trigger: DEFAULT.FrequentLogWriterTrigger
-[2025-02-17 23:14:26] Rescheduling job: DEFAULT.FileRotationJob with updated trigger: DEFAULT.FileRotationTrigger
-[2025-02-17 23:14:27] [UserService] INFO: User 'user2' logged out | Session: 63fa8128 | IP: 192.168.173.103 | Device: Mobile | Browser: Safari | Response Time: 413ms
