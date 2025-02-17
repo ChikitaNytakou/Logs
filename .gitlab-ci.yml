@@ -26,7 +26,7 @@ increase_major:
     - git commit -am "Release version $new_version" || echo "No changes to commit"
     - git tag "v$new_version"
   rules:
-    - if: '$CI_COMMIT_MESSAGE =~ /major/'  # Увеличиваем major, если есть "major"
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /major/'  # Увеличиваем major, если есть "major"
 
 # Увеличение minor версии
 increase_minor:
@@ -38,7 +38,7 @@ increase_minor:
     - git commit -am "Release version $new_version" || echo "No changes to commit"
     - git tag "v$new_version"
   rules:
-    - if: '$CI_COMMIT_MESSAGE =~ /minor/'  # Увеличиваем minor, если есть "minor"
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /minor/'  # Увеличиваем minor, если есть "minor"
 
 # Увеличение patch версии
 increase_patch:
@@ -50,7 +50,7 @@ increase_patch:
     - git commit -am "Release version $new_version" || echo "No changes to commit"
     - git tag "v$new_version"
   rules:
-    - if: '$CI_COMMIT_MESSAGE =~ /patch/'  # Увеличиваем patch, если есть "patch"
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master" && $CI_COMMIT_MESSAGE =~ /patch/'  # Увеличиваем patch, если есть "patch"
 
 build:
   stage: build
